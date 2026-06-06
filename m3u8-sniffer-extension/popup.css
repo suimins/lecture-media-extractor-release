@@ -1,0 +1,309 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #1f2937;
+  background: #f7f8fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 420px;
+  min-height: 440px;
+  margin: 0;
+  background: #f7f8fa;
+}
+
+button,
+textarea,
+input {
+  font: inherit;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px;
+}
+
+.header,
+.section-head,
+.status,
+.actions,
+.candidate-top,
+.candidate-meta {
+  display: flex;
+  align-items: center;
+}
+
+.header,
+.section-head,
+.status {
+  justify-content: space-between;
+  gap: 10px;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 17px;
+  font-weight: 750;
+}
+
+h2 {
+  font-size: 12px;
+  font-weight: 750;
+  text-transform: uppercase;
+  color: #4b5563;
+}
+
+.muted {
+  display: block;
+  max-width: 300px;
+  overflow: hidden;
+  color: #6b7280;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.status,
+.best,
+.course,
+.candidates {
+  border: 1px solid #d8dee8;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 12px;
+}
+
+.status-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #374151;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.best {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.hidden {
+  display: none;
+}
+
+textarea {
+  width: 100%;
+  min-height: 74px;
+  resize: vertical;
+  border: 1px solid #cfd7e3;
+  border-radius: 6px;
+  padding: 8px;
+  color: #111827;
+  background: #f9fafb;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.actions {
+  gap: 8px;
+}
+
+.wrap-actions {
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+button {
+  min-height: 32px;
+  border: 1px solid #cfd7e3;
+  border-radius: 6px;
+  padding: 0 10px;
+  color: #111827;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #eef4ff;
+  border-color: #94b8f2;
+}
+
+.icon-button {
+  width: 32px;
+  padding: 0;
+  font-size: 17px;
+}
+
+.text-button {
+  min-height: 26px;
+  padding: 0 8px;
+  color: #4b5563;
+  font-size: 12px;
+}
+
+.pill {
+  border-radius: 999px;
+  padding: 3px 8px;
+  color: #1d4ed8;
+  background: #dbeafe;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.candidate-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.candidate-list.empty,
+.course-list.empty {
+  display: block;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.course-list {
+  display: flex;
+  max-height: 180px;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 10px;
+  overflow: auto;
+}
+
+.course-item,
+.candidate {
+  border: 1px solid #e5e7eb;
+  border-radius: 7px;
+  padding: 9px;
+  background: #fbfcfe;
+}
+
+.candidate.best-candidate {
+  border-color: #93c5fd;
+  background: #eff6ff;
+}
+
+.course-item.active {
+  border-color: #f59e0b;
+  background: #fffbeb;
+}
+
+.course-item.done {
+  border-color: #86efac;
+  background: #f0fdf4;
+}
+
+.course-item.failed {
+  border-color: #fecaca;
+  background: #fef2f2;
+}
+
+.course-item-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.candidate-top {
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+
+.course-title,
+.candidate-title {
+  min-width: 0;
+  overflow: hidden;
+  font-size: 12px;
+  font-weight: 750;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.candidate-score {
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.course-meta,
+.wide-muted {
+  color: #6b7280;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.course-meta {
+  margin-top: 4px;
+}
+
+.candidate-url {
+  display: block;
+  overflow-wrap: anywhere;
+  color: #374151;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 10.5px;
+  line-height: 1.35;
+}
+
+.candidate-sample {
+  margin-top: 7px;
+  color: #4b5563;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.candidate-meta {
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+  color: #6b7280;
+  font-size: 11px;
+}
+
+.mini-button {
+  min-height: 24px;
+  padding: 0 7px;
+  font-size: 11px;
+}
+
+.remove-course-button {
+  min-height: 24px;
+  flex: 0 0 auto;
+  padding: 0 7px;
+  color: #991b1b;
+  font-size: 11px;
+}
+
+.remove-course-button:disabled {
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.subtitle-pill {
+  color: #047857;
+  background: #d1fae5;
+}

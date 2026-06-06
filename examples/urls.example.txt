@@ -1,0 +1,6 @@
+# One m3u8 URL per line.
+# Lines starting with # are ignored.
+# Replace these placeholders with URLs copied from the browser extension.
+
+https://example.com/path/to/index.m3u8
+https://example.com/another/lecture/index.m3u8

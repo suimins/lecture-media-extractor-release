@@ -1,0 +1,10 @@
+* text=auto
+
+*.ps1 text eol=crlf
+*.py text eol=lf
+*.js text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.toml text eol=lf

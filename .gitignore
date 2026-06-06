@@ -1,0 +1,41 @@
+__pycache__/
+*.py[cod]
+*.pyo
+
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pip-cache/
+
+dist/
+build/
+*.egg-info/
+
+# Runtime data
+outputs/
+transcripts/
+m3u8/outputs/
+m3u8/model-cache/
+model-cache/
+tmp/
+*.log
+*.jsonl
+*.wav
+*.mp4
+*.m4a
+*.aac
+*.ts
+*.srt.tmp
+
+# Local secrets and private request data
+.env
+.env.*
+headers.json
+*.headers.json
+*.cookies
+
+# Optional local tool binaries
+tools/ffmpeg/
+*.exe

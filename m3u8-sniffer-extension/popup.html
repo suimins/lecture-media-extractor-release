@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>M3U8 Sniffer</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <div>
+          <h1>M3U8 Sniffer</h1>
+          <p id="tabTitle" class="muted">Checking current tab</p>
+        </div>
+        <button id="refreshButton" class="icon-button" title="Refresh" type="button">R</button>
+      </header>
+
+      <section class="status" id="statusPanel">
+        <div>
+          <span id="statusLabel" class="status-label">Idle</span>
+          <span id="statusDetail" class="muted"></span>
+        </div>
+        <label class="toggle">
+          <input id="autoCopyToggle" type="checkbox">
+          <span>Auto copy</span>
+        </label>
+      </section>
+
+      <section class="course">
+        <div class="section-head">
+          <h2>Course Queue</h2>
+          <span id="courseMeta" class="pill">idle</span>
+        </div>
+        <p id="courseStatus" class="wide-muted">No course scan yet.</p>
+        <div class="actions wrap-actions">
+          <button id="scanCourseButton" type="button">Scan Course</button>
+          <button id="startQueueButton" type="button">Start Queue</button>
+          <button id="pauseQueueButton" type="button">Pause</button>
+          <button id="copyManifestButton" type="button">Copy JSON</button>
+          <button id="clearCourseButton" class="text-button" type="button">Clear</button>
+        </div>
+        <div id="courseList" class="course-list empty">No lectures scanned.</div>
+      </section>
+
+      <section id="bestPanel" class="best hidden">
+        <div class="section-head">
+          <h2>Best M3U8</h2>
+          <span id="bestMeta" class="pill">unknown</span>
+        </div>
+        <textarea id="bestUrl" readonly spellcheck="false"></textarea>
+        <div class="actions">
+          <button id="copyUrlButton" type="button">Copy URL</button>
+          <button id="copyCommandButton" type="button">Copy CLI Command</button>
+        </div>
+      </section>
+
+      <section id="bestSubtitlePanel" class="best hidden">
+        <div class="section-head">
+          <h2>Best Subtitle</h2>
+          <span id="bestSubtitleMeta" class="pill subtitle-pill">unknown</span>
+        </div>
+        <textarea id="bestSubtitleUrl" readonly spellcheck="false"></textarea>
+        <div class="actions">
+          <button id="copySubtitleButton" type="button">Copy Subtitle URL</button>
+        </div>
+      </section>
+
+      <section class="candidates">
+        <div class="section-head">
+          <h2>M3U8 Candidates</h2>
+          <button id="clearButton" class="text-button" type="button">Clear</button>
+        </div>
+        <div id="candidateList" class="candidate-list empty">No m3u8 detected yet.</div>
+      </section>
+
+      <section class="candidates">
+        <div class="section-head">
+          <h2>Subtitle Candidates</h2>
+        </div>
+        <div id="subtitleList" class="candidate-list empty">No subtitle detected yet.</div>
+      </section>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

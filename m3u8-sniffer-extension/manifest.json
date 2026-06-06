@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "M3U8 Sniffer",
+  "version": "0.1.0",
+  "description": "Detects m3u8 playlist and subtitle URLs from the current tab.",
+  "permissions": [
+    "clipboardWrite",
+    "offscreen",
+    "storage",
+    "tabs",
+    "webRequest"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "M3U8 Sniffer",
+    "default_popup": "popup.html"
+  }
+}
