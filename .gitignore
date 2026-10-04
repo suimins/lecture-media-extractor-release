@@ -14,6 +14,10 @@ build/
 *.egg-info/
 
 # Runtime data
+data/
+results/
+lecture_audio/
+work/
 outputs/
 transcripts/
 m3u8/outputs/

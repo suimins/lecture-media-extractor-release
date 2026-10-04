@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Lecture Script · Chrome에 추가</title>
+<style>body{font:17px/1.8 'Malgun Gothic',sans-serif;background:#f3f6fa;color:#1c3049;max-width:780px;margin:48px auto;padding:0 24px}h1{font-size:32px;line-height:1.4}section{background:#fff;border:1px solid #d9e2ee;border-radius:16px;padding:24px 28px;margin:24px 0}li{margin:12px 0}input{box-sizing:border-box;width:100%;padding:13px;border:1px solid #a9bbd0;border-radius:8px;font:14px monospace;color:#20334a}button{background:#2458cc;color:#fff;border:0;border-radius:8px;padding:12px 18px;font:inherit;cursor:pointer;margin-top:12px}code{background:#eef2f8;padding:2px 6px;border-radius:4px}small{color:#596d85}#copied{margin-left:12px;font-size:14px}</style></head>
+<body><small>LECTURE SCRIPT · WINDOWS</small><h1>설치는 끝났습니다.<br>Chrome에 확장을 한 번만 추가하세요.</h1>
+<section><ol><li>함께 열린 <strong>Chrome 확장 관리</strong> 탭으로 이동하세요.<br>찾을 수 없다면 Chrome 주소창에 <code>chrome://extensions</code>를 입력하세요.</li>
+<li>오른쪽 위 <strong>개발자 모드</strong>를 켜세요.</li><li><strong>압축해제된 확장 프로그램을 로드합니다</strong>를 누르세요.</li>
+<li>아래 경로를 복사해 폴더 선택 창의 주소창에 붙여넣고 Enter를 누른 뒤, <strong>폴더 선택</strong>을 누르세요.</li></ol>
+<label for="folder">선택할 확장 폴더</label><input id="folder" readonly><button id="copy">확장 폴더 경로 복사</button><span id="copied" role="status"></span>
+<p>추가할 확장 이름은 <strong>Lecture Script · 강의 자동 저장</strong>입니다. Chrome의 퍼즐 모양 아이콘에서 고정하면 편리합니다.</p>
+<small>Chrome 연결은 자동으로 등록했습니다. 스토어에 등록되지 않은 확장은 이 화면에서 직접 추가해야 합니다.</small></section>
+<section><h2>강의 저장하기</h2><ol><li>확장 아이콘을 눌러 <strong>MP4 · MP3 · 스크립트</strong> 중 필요한 항목을 체크하세요. 기본값은 모두 선택입니다.</li><li>학교 사이트에 로그인하고 과목 페이지를 새로고침한 뒤 강의 창을 여세요. 필요하면 재생을 한 번 누르세요.</li><li>한성 eClass에서는 자동으로 시작합니다. 수동으로 시작하려면 확장에서 <strong>선택한 파일 다운로드 / 재시도</strong>를 누르세요.</li></ol>
+<p>결과는 <strong>다운로드 → lecture → 과목명</strong>에 저장됩니다. 처리 중에는 Chrome을 켜두세요. 첫 스크립트 생성에는 모델 다운로드 시간이 필요합니다.</p>
+<p>설치된 프로그램은 <code>%LOCALAPPDATA%\LectureScript</code>에 있습니다. 받은 ZIP과 압축을 푼 폴더는 정리해도 됩니다.</p></section>
+<script>
+const folder = document.querySelector('#folder');
+folder.value = decodeURIComponent(new URL('extension/', location.href).pathname).replace(/^\/([A-Za-z]:)/, '$1').replaceAll('/', '\\').replace(/\\$/, '');
+document.querySelector('#copy').addEventListener('click', async () => {
+  folder.select();
+  try { await navigator.clipboard.writeText(folder.value); document.querySelector('#copied').textContent = '복사했습니다.'; }
+  catch { document.querySelector('#copied').textContent = document.execCommand('copy') ? '복사했습니다.' : 'Ctrl+C로 복사하세요.'; }
+});
+</script></body></html>

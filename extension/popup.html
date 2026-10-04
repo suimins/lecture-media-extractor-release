@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>Lecture Script</title>
+<link rel="stylesheet" href="popup.css"></head>
+<body><header><span class="eyebrow">LECTURE SCRIPT</span><h1>강의 창만 열어두세요.</h1>
+<p>필요한 파일을 선택해 저장하세요.</p></header>
+<label class="toggle"><input type="checkbox" id="auto" checked> 한성 eClass 강의 창에서 자동 시작</label>
+<p class="hint">자동 저장은 한성 eClass 재생 창에 적용됩니다.<br>다른 사이트는 아래 버튼으로 시작하세요.</p>
+<section><label for="course">과목명 <span>자동 감지되지 않을 때 입력</span></label>
+<input id="course" placeholder="예: 컴퓨터네트워크" maxlength="200">
+<fieldset><legend>다운로드할 파일</legend><div class="outputs">
+<label><input type="checkbox" id="mp4" checked> MP4 영상</label>
+<label><input type="checkbox" id="mp3" checked> MP3 음성</label>
+<label><input type="checkbox" id="script" checked> 스크립트</label>
+</div><p id="selection-hint" class="hint">여러 항목을 함께 선택할 수 있습니다. 선택한 파일은 저장 후 유지됩니다.</p></fieldset>
+<label for="model">음성 인식 모델</label><select id="model"><option value="small">빠르게 · small</option><option value="medium">균형 · medium</option><option value="large-v3">정밀 · large-v3</option><option value="turbo">turbo</option></select>
+<button id="start" class="primary">선택한 파일 다운로드 / 재시도</button><p id="notice" role="status"></p></section>
+<section><h2>진행 상황</h2><div id="jobs" aria-live="polite"></div></section>
+<footer><button id="open">저장 폴더 열기</button><p id="output">다운로드/lecture/과목명</p><p class="hint">처리 중에는 크롬을 켜두세요. 이 팝업은 닫아도 됩니다.</p></footer>
+<script src="popup.js"></script></body></html>

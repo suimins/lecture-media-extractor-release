@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Lecture Script · 강의 자동 저장",
+  "version": "0.5.1",
+  "minimum_chrome_version": "120",
+  "description": "크롬에서 MP4 영상, MP3 음성, 스크립트를 선택해 다운로드/lecture/과목명에 저장합니다.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqSb0rPQKbEQX93zV/Fa2IpOx0dTHf7CwAhpQxk2BCxXK031RRW3MK/lJJvRZNpOayJrggaxa6852/+kIQviay3Yq97d6xRmnspnhBONIPkk4z7JzKy5fhhyk1XK0a5JlsU9zTtESe7H/ILlFq9DbjjwfZB637ikiboXRNeilPfqKKn7mzv3o0mQQS9fbUhq0WjOH10RBN4F/mctoCMw5/ogVHjs/bUdS78gC9Z8jz0X0tVxJrmVvO6oUCyFMcvc1946tUemaeDF6GHennlGM1dywwDumdmc5cQTVpSIWt6jH0SePdvrZr5spuTsbvmMSMW40BsiQsH8PV6uwL/e2wQIDAQAB",
+  "permissions": ["storage", "tabs", "webRequest", "webNavigation", "cookies", "nativeMessaging", "scripting", "activeTab"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "background": {"service_worker": "background.js"},
+  "action": {"default_title": "강의 자동 저장", "default_popup": "popup.html"},
+  "content_scripts": [{
+    "matches": ["https://learn.hansung.ac.kr/*"],
+    "js": ["content.js"],
+    "run_at": "document_start",
+    "all_frames": true
+  }]
+}

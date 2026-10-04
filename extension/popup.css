@@ -1,0 +1,17 @@
+:root { color-scheme: light; font-family: "Malgun Gothic", system-ui, sans-serif; color:#183047; background:#f4f7fb; }
+* { box-sizing:border-box; } body { width:390px; margin:0; padding:24px; font-size:13px; }
+.eyebrow { color:#426ce2; font-size:10px; font-weight:800; letter-spacing:2px; }
+h1 { font-size:23px; letter-spacing:-1px; margin:12px 0 6px; } header p { color:#62758c; margin:0 0 24px; }
+.toggle { display:flex; align-items:center; gap:8px; font-weight:700; } input[type=checkbox] { accent-color:#245de8; width:17px; height:17px; }
+fieldset { border:0; padding:0; margin:0 0 16px; min-width:0; } legend { font-weight:700; margin-bottom:10px; padding:0; }
+.outputs { display:flex; flex-wrap:wrap; gap:8px 12px; } .outputs label { display:flex; align-items:center; gap:5px; margin:0; font-size:12px; }
+.outputs input { margin:0; } fieldset .hint { margin-bottom:0; } select:disabled { opacity:.5; }
+.hint { color:#758297; font-size:11px; line-height:1.7; } section { background:white; border:1px solid #dde6f0; border-radius:12px; padding:16px; margin-top:16px; }
+label { display:block; margin-bottom:7px; font-weight:700; } label span { font-size:10px; color:#7c889a; font-weight:400; margin-left:6px; }
+input:not([type=checkbox]),select { width:100%; padding:10px; border:1px solid #d5dfeb; border-radius:7px; background:white; color:#183047; margin-bottom:14px; font:inherit; }
+button { border:1px solid #d4dfef; border-radius:7px; padding:10px 12px; cursor:pointer; background:white; color:#245de8; font:inherit; font-weight:700; }
+button:hover { background:#eef3ff; } button:disabled { opacity:.5; cursor:wait; } button.primary { background:#245de8; color:white; border:0; width:100%; }
+h2 { margin:0 0 12px; font-size:14px; } .job { border-top:1px solid #edf0f6; padding:12px 0; } .job:first-child { border:0; padding-top:0; }
+.job strong { display:block; overflow-wrap:anywhere; } .job small { display:block; color:#697b91; margin:5px 0; overflow-wrap:anywhere; line-height:1.5; }
+progress { width:100%; height:6px; accent-color:#245de8; } .job button { padding:4px 10px; font-size:11px; margin-top:8px; }
+#notice { color:#9b3b23; margin-bottom:0; line-height:1.6; } #notice:empty { display:none; } footer { margin-top:18px; } #output { font-size:10px; overflow-wrap:anywhere; color:#738298; }
